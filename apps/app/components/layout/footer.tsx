@@ -11,4 +11,4 @@ function Footer() {
 	);
 }
 
-export {Footer}
+export { Footer };

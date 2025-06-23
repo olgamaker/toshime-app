@@ -1,7 +1,6 @@
 import { NetworkType } from "@repo/lib/config/network";
+import { describe, expect, it } from "vitest";
 import { getNetworkPaymentUrl } from "../lib/payments/url";
-import { describe, it, expect } from 'vitest';
-
 
 describe("getNetworkPaymentUrl", () => {
 	it("generates bitcoin url", () => {
