@@ -51,14 +51,45 @@ function WalletInfo() {
 	);
 }
 
-function WalletUpdater({ wallet }: { wallet: WalletResponse }) {
+function WalletUpdater() {
 	const { setWallet } = useWalletStore();
 
 	useEffect(() => {
-		setWallet(wallet);
-	}, [wallet, setWallet]);
+		fetchWallet()
+			.then((wallet) => {
+				if (!wallet) {
+					return window.location.assign("/");
+				}
+
+				setWallet(wallet);
+			})
+			.catch(() => window.location.assign("/"));
+	}, [setWallet]);
 
 	return null;
+}
+
+async function fetchWallet(): Promise<WalletResponse | null> {
+	try {
+		const res = await fetch("/api/wallet", {
+			method: "GET",
+			credentials: "include",
+		});
+
+		if (!res.ok) return null;
+
+		const data = await res.json();
+
+		if (!data || !data.address) {
+			console.error("Failed to fetch wallet:", data);
+			return null;
+		}
+
+		return data;
+	} catch (error) {
+		console.error("Failed to fetch wallet:", error);
+		return null;
+	}
 }
 
 export { WalletInfo, WalletUpdater };
