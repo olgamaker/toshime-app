@@ -2,8 +2,7 @@ import { Header } from "@/components/layout/header";
 import { NetworkChecker } from "@/components/layout/network-checker";
 import { WalletUpdater } from "@/components/wallet/wallet";
 
-// SSR Wallet fetching
-export default async function WithWalletLayout({
+export default function WithWalletLayout({
 	children,
 }: {
 	children: React.ReactNode;

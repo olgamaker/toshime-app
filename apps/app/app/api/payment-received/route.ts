@@ -1,5 +1,3 @@
-// app/api/request-received/route.ts
-
 import {
 	type Currency,
 	DEFAULT_NETWORK_CURRENCY,
