@@ -1,0 +1,13 @@
+{
+	"name": "@repo/lib",
+	"version": "0.0.0",
+	"private": true,
+	"license": "MIT",
+	"exports": {
+		"./*": "./src/*.ts"
+	},
+	"devDependencies": {
+		"@types/node": "^24.0.3",
+		"bip32": "5.0.0-rc.0"
+	}
+}

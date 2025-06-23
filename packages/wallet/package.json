@@ -1,0 +1,22 @@
+{
+	"name": "@repo/wallet",
+	"version": "0.0.0",
+	"private": true,
+	"license": "MIT",
+	"exports": {
+		"./*": "./src/*.ts"
+	},
+	"dependencies": {
+		"@noble/hashes": "^1.8.0",
+		"@noble/secp256k1": "^1.7.2",
+		"@repo/lib": "workspace:*",
+		"bip32": "2.0.6",
+		"bip39": "^3.1.0",
+		"bitcoinjs-lib": "^6.1.7",
+		"buffer": "^6.0.3",
+		"ecpair": "^3.0.0"
+	},
+	"devDependencies": {
+		"@types/node": "^24.0.3"
+	}
+}

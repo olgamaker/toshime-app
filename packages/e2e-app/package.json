@@ -1,0 +1,12 @@
+{
+	"name": "@repo/e2e-app",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"test": "playwright test"
+	},
+	"devDependencies": {
+		"@playwright/test": "^1.41.2",
+		"typescript": "5.8.2"
+	}
+}

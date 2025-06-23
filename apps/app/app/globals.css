@@ -1,0 +1,68 @@
+@source "./**/*.{ts,tsx}";
+
+@keyframes float-slow {
+	0%,
+	100% {
+		transform: translateY(0px) rotate(0deg);
+	}
+	50% {
+		transform: translateY(-20px) rotate(5deg);
+	}
+}
+
+@keyframes float-fast {
+	0%,
+	100% {
+		transform: translateY(0px) rotate(45deg);
+	}
+	50% {
+		transform: translateY(-15px) rotate(50deg);
+	}
+}
+
+@keyframes spin-slow {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.animate-float-slow {
+	animation: float-slow 6s ease-in-out infinite;
+}
+
+.animate-float-fast {
+	animation: float-fast 4s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+	animation: spin-slow 20s linear infinite;
+}
+
+/* Custom gradient utilities */
+.bg-radial-gradient {
+	background: radial-gradient(circle at center, var(--tw-gradient-stops));
+}
+
+/* Noise texture (optional - you can replace with an actual noise image) */
+.bg-noise {
+	background-image: radial-gradient(
+		circle at 1px 1px,
+		rgba(0, 0, 0, 0.15) 1px,
+		transparent 0
+	);
+	background-size: 20px 20px;
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+	.bg-noise {
+		background-image: radial-gradient(
+			circle at 1px 1px,
+			rgba(255, 255, 255, 0.1) 1px,
+			transparent 0
+		);
+	}
+}

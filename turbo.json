@@ -1,0 +1,46 @@
+{
+	"$schema": "https://turborepo.com/schema.json",
+	"ui": "tui",
+	"tasks": {
+		"//#format-and-lint": {},
+		"//#format-and-lint:fix": {
+			"cache": false
+		},
+		"build": {
+			"dependsOn": [
+				"^build"
+			],
+			"inputs": [
+				"$TURBO_DEFAULT$",
+				".env*"
+			],
+			"outputs": [
+				".next/**",
+				"!.next/cache/**"
+			],
+			"env": [
+				"SESSION_SECRET",
+				"BLOCKCYPHER_TOKEN"
+			]
+		},
+		"check-types": {
+			"dependsOn": [
+				"^check-types"
+			]
+		},
+		"dev": {
+			"cache": false,
+			"persistent": true,
+			"env": [
+				"SESSION_SECRET",
+				"BLOCKCYPHER_TOKEN"
+			]
+		},
+		"test": {
+			"dependsOn": [
+				"^test"
+			],
+			"outputs": []
+		}
+	}
+}

@@ -1,0 +1,28 @@
+{
+	"name": "btc-payments",
+	"private": true,
+	"scripts": {
+		"build": "turbo run build",
+		"dev": "turbo run dev",
+		"format-and-lint": "biome check .",
+		"format-and-lint:fix": "biome check . --write",
+		"check-types": "turbo run check-types",
+		"test": "turbo run test",
+		"test:watch": "vitest",
+		"test:e2e": "pnpm --filter e2e-app test"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.0.0",
+		"turbo": "^2.5.4",
+		"typescript": "5.8.2",
+		"vitest": "^1.5.0",
+		"@vitejs/plugin-react": "^4.2.1",
+		"@testing-library/react": "^15.0.0",
+		"@testing-library/jest-dom": "^6.1.5",
+		"jsdom": "^24.0.0"
+	},
+	"packageManager": "pnpm@9.0.0",
+	"engines": {
+		"node": ">=18"
+	}
+}
